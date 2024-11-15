@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do-list</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-image: linear-gradient(to right, black, rgb(13, 13, 88));
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: white;
+        }
+
+        h1 {
+            text-align: center;
+            padding: 2rem;
+            font-size: 3rem;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            gap: 4rem;
+            justify-content: center;
+            align-items: center;
+        }
+
+        input {
+            width: 15vw;
+            height: 4vh;
+            border-radius: 5px;
+            border: none;
+        }
+
+        button {
+            width: 35px;
+            height: 35px;
+            border-radius: 70px;
+            font-size: 1.2rem;
+            border: none;
+            background-color: rgb(7, 193, 240);
+            color: black;
+        }
+
+        button:active {
+            scale: 80%;
+            background-color: gray;
+        }
+
+        ul li {
+            font-size: 1.5rem;
+            font-weight: 500;
+        }
+
+        @media only screen and (max-width:600px) {
+
+            input {
+                width: 70vw;
+                height: 5vh;
+            }
+
+            button {
+                width: 40px;
+                height: 40px;
+                margin: 5px;
+            }
+
+
+        }
+    </style>
+</head>
+
+<body>
+    <h1>To Do List</h1>
+    <div class="container">
+        <div>
+            <input id="input" type="text" placeholder="Enter a task..">
+            <button id="btn" type="submit">+</button>
+        </div>
+        <div>
+            <ul id="list">
+
+            </ul>
+        </div>
+    </div>
+
+</body>
+
+<script>
+    let input = document.getElementById("input");
+    let btn = document.getElementById("btn");
+    let list = document.getElementById("list");
+
+    btn.onclick = () => {
+        if (input.value) {
+            let newItem = document.createElement('li');
+            newItem.innerHTML = input.value;
+            list.append(newItem);
+        }
+
+    }
+
+</script>
+
+</html>
