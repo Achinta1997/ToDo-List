@@ -33,9 +33,10 @@
 
         input {
             width: 15vw;
-            height: 4vh;
+            height: 3.8vh;
             border-radius: 5px;
             border: none;
+            padding: 5px;
         }
 
         button {
@@ -102,6 +103,7 @@
             let newItem = document.createElement('li');
             newItem.innerHTML = input.value;
             list.append(newItem);
+            input.value = '';
         }
 
     }
